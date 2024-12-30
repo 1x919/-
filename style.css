@@ -1,0 +1,808 @@
+header {
+    background-color: #A8E0DF;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box; 
+    position: relative; 
+    padding-bottom: 15px;
+    padding-left: 5px;
+}
+
+#header-top {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px; 
+    box-sizing: border-box;
+}
+
+#header-top h1 {
+    margin: 0;
+    margin-left: 50px;
+    font-size: 40px;
+    color: #2e7d32;
+}
+
+
+#login-nav {
+    position: absolute; 
+    right:0%; 
+    transform: translateX(-50%); 
+    top: 30%; 
+}
+#login-nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+#login-nav ul li {
+    display: inline-block;
+}
+
+#login-nav ul li a {
+    text-decoration: none;
+    color: #ffffff; 
+    padding: 10px 20px; 
+    border-radius: 5px;
+    transition: color 0.3s; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    width: 120px; 
+    height: 50px; 
+    border: 2px solid #ffffff; 
+}
+
+#login-nav ul li a:hover {
+    color: #ff9800; 
+}
+
+#login-nav ul li a .icon {
+    margin-right: 18px; 
+    font-size: 30px; 
+}
+
+
+
+
+#main-nav {
+    width: 100%;
+    background-color: #A8E0DF; 
+    text-align: center;
+    margin: 0;
+    display: flex; 
+    justify-content: left; 
+}
+
+#main-nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    width: 50%;
+    border: 1px dashed #0a8320; 
+    border-radius: 5px;
+}
+
+#main-nav ul li {
+    flex: 1; 
+    text-align: center;
+    border-right: 1px dashed #0a8320;
+    margin: 0; 
+}
+
+#main-nav ul li a {
+    text-decoration: none;
+    color: #0a8320;
+    padding: 5px 0; 
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 18px; 
+    display: block; 
+}
+
+#main-nav ul li a:hover {
+    background-color: #00fcf8;
+    color: #1b5e20;
+}
+
+/*以下開始為main*/
+/*以下開始為main*/
+/*以下開始為main*/
+/*以下開始為main*/
+/*以下開始為main*/
+
+main{
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+/*模板*/
+#wrapper{
+    display: grid;
+    grid-template-columns: 1fr 6fr 1fr;
+}
+#item1{
+    height: 200px,auto;
+}
+#item2{
+    height: 200px,auto;
+}
+#item3{
+    height: 200px,auto;
+} 
+/*首頁*/
+/*首頁*/
+/*首頁*/
+#home{
+    height: auto;
+    border: 2px solid #3498db; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    padding: 30px; 
+    background-color: #f9f9f9; 
+}
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+.section {
+    padding: 20px;
+}
+.section-title {
+    margin-top: 0;
+    color: #d9534f;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.news-item, .internship-item {
+    border-bottom: 1px solid #ddd;
+}
+.news-item:last-child, .internship-item:last-child {
+    border-bottom: none;
+}
+.news-text, .internship-text {
+    font-size: 1em;
+}
+.news-date, .internship-date {
+    font-size: 0.9em;
+    color: #666;
+}
+.internship-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-header th, .table-cell {
+    padding: 8px; 
+    text-align: left;
+}
+
+.table-cell a {
+    text-decoration: none; 
+    color: inherit; 
+    display: block; 
+    height: 100%; 
+    width: 100%; 
+}
+
+.table-cell a:hover {
+    background-color: #f0f0f0; 
+}
+
+
+
+.internship-item {
+    border-bottom: 1px solid #ddd; 
+}
+.search-button {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #d9534f;
+    color: #fff;
+    text-align: center;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+/*擬態框*/
+.modal-content {
+    background-color: #e0f2f9; /* 模擬淡藍色背景 */
+    border-radius: 8px; /* 調整圓角 */
+    border: none;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* 添加陰影 */
+}
+
+.modal-header, .modal-footer {
+    background-color: #a1d6eb; /* 類似頂部的淺藍色區域 */
+    border-bottom: none;
+    border-top: none;
+    color: #000;
+}
+
+.modal-title {
+    font-weight: bold;
+    color: #333;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.form-control, .form-check-label {
+    background-color: #ffffff; /* 白色輸入框背景 */
+    border-radius: 4px;
+}
+
+.btn-primary {
+    background-color: #4986f8; /* 調整主按鈕顏色 */
+    border: none;
+    border-radius: 4px;
+}
+
+.btn-secondary {
+    background-color: #cccccc; /* 副按鈕灰色背景 */
+    border: none;
+    border-radius: 4px;
+}
+
+.btn-close {
+    color: #666;
+    font-size: 1rem;
+    margin-right: -0.5rem;
+    opacity: 1;
+}
+/* 關閉按鈕的樣式 */
+.modal-footer .btn-secondary {
+    background-color: #ffffff; /* 白色背景 */
+    color: #666666; /* 深灰色字體 */
+    border: none; /* 無邊框 */
+    border-radius: 4px; /* 輕微圓角 */
+    font-weight: bold; /* 加粗字體 */
+    padding: 6px 12px;
+}
+
+/* 保存變更/提交按鈕的樣式 */
+.modal-footer .btn-primary {
+    background-color: #63a8e1; /* 淺藍色背景 */
+    color: #ffffff; /* 白色字體 */
+    border: none; /* 無邊框 */
+    border-radius: 4px; /* 輕微圓角 */
+    font-weight: bold; /* 加粗字體 */
+    padding: 6px 12px;
+}
+/*找實習*/
+#search-container {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.search-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* 增加欄位之間的間距 */
+}
+
+.form-row {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.form-control {
+    padding: 10px;
+    border: 2px solid #3498db;
+    border-radius: 5px;
+    font-size: 16px;
+    flex: 1; /* 讓每個欄位平分可用空間 */
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #1abc9c; /* 聚焦時的邊框顏色 */
+    box-shadow: 0 0 5px rgba(26, 188, 156, 0.5);
+}
+
+.search-button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-button:hover {
+    background-color: #2980b9;
+}
+.form-row label {
+    margin-right: 10px;
+}
+
+.form-row input, 
+.form-row select {
+    height: 36px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.form-row button {
+    height: 36px;
+    padding: 5px 15px;
+    border: none;
+    background-color: #ffd900;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form-row button:hover {
+    background-color: #fac42e;
+}
+
+.internship-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-header {
+    background-color: #f2f2f2;
+}
+
+.table-cell {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.internship-item {
+    background-color: #fff;
+}
+
+.internship-item:hover {
+    background-color: #f9f9f9;
+}
+/*登入選擇*/
+#container {
+    background: linear-gradient(135deg, #a2c2e6 0%, #f0f4f8 100%); /* 淺色漸層背景 */
+    border-radius: 15px; /* 調整圓角 */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); /* 更柔和的陰影 */
+    padding: 60px; /* 增加內邊距 */
+    width: 100%;
+    max-width: 450px; /* 最大寬度 */
+    transform: scale(1.1); /* 縮放整個容器 */
+    transform-origin: center; /* 設置縮放原點 */
+    transition: transform 0.3s;
+}
+
+#container:hover {
+    transform: scale(1.12); /* 懸停時稍微放大 */
+}
+
+#title {
+    text-align: center;
+    color: #333; /* 調整標題顏色 */
+    margin-bottom: 25px; /* 增加下邊距 */
+    font-size: 26px; /* 調整字體大小 */
+    font-weight: bold; /* 調整字體加粗 */
+}
+
+select, button {
+    width: 100%;
+    padding: 14px; /* 增加按鈕和選擇框的內邊距 */
+    margin: 10px 0;
+    border: 1px solid #cccccc; /* 調整邊框顏色 */
+    border-radius: 5px;
+    font-size: 18px; /* 增加字體大小 */
+    background-color: #ffffff; /* 調整背景顏色 */
+    transition: border-color 0.3s;
+}
+
+select:focus, button:focus {
+    outline: none;
+    border-color: #007bff; /* 聚焦時的邊框顏色 */
+}
+
+#submit-button {
+    background-color: #007bff; /* 按鈕背景顏色 */
+    color: #ffffff; /* 按鈕文字顏色 */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#submit-button:hover {
+    background-color: #0056b3; /* 按鈕懸停顏色 */
+    transform: translateY(-1px); /* 懸停時上升效果 */
+}
+
+#error-message {
+    color: red;
+    font-size: 16px; /* 增加錯誤訊息字體大小 */
+    text-align: center;
+    margin-top: 10px;
+}
+/*登入*/
+/*登入*/
+/*登入*/
+.login-container {
+    max-width: 400px;
+    width: 100%;
+    padding: 30px;
+    background: linear-gradient(135deg, #e0f7fa, #80deea);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transform: scale(1.1); /* 縮放整個容器 */
+    transform-origin: center; /* 設置縮放原點 */
+}
+
+.login-title {
+    text-align: center;
+    font-size: 2em;
+    color: #00796b;
+    margin-bottom: 20px;
+}
+.input-field {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #b2dfdb;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+.input-field:focus {
+    border-color: #00796b;
+    outline: none;
+}
+.submit-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #4db6b1; /* 修改為與背景顏色相似的色調 */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+.submit-button:hover {
+    background-color: #00796b; /* 保留懸停時的顏色 */
+}
+.error-message {
+    color: #d32f2f;
+    text-align: center;
+    margin-top: 10px;
+}
+/*註冊*/
+/*註冊*/
+/*註冊*/
+.login-container {
+    max-width: 400px;
+    width: 100%;
+    padding: 30px;
+    background: linear-gradient(135deg, #e0f7fa, #80deea);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.submit-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #4db6b1; /* 與背景顏色相似的色調 */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+.submit-button:hover {
+    background-color: #00796b; /* 懸停時的顏色 */
+}
+/*實習資料管理*/
+/*實習資料管理*/
+/*實習資料管理*/
+#internship-container {
+    background-color: #ffffff; 
+    border: 1px solid #dcdcdc; 
+    border-radius: 15px; 
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    margin: 20px 0; 
+}
+
+
+#internship-container h2 {
+    color: #333; 
+    margin-bottom: 15px; 
+    font-size: 24px;
+}
+
+
+#internship-list h3 {
+    color: #666; 
+    margin-top: 20px;
+}
+#internship-form {
+    background-color: #f0f8ff; 
+    padding: 20px;
+    border: 2px solid #3498db; 
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    margin-bottom: 20px;
+}
+
+#internship-form label {
+    display: block;
+    margin: 10px 0 5px; 
+    font-size: 16px; 
+    color: #2e7d32;
+}
+
+#internship-form input[type="text"],
+#internship-form input[type="date"] {
+    width: 100%; 
+    padding: 10px; 
+    border: 2px solid #2ecc71;
+    border-radius: 5px; 
+    box-sizing: border-box; 
+    margin-bottom: 15px; 
+    font-size: 16px;
+}
+
+#internship-form input[type="submit"] {
+    background-color: #2ecc71; 
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    padding: 10px 15px; 
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+#internship-form input[type="submit"]:hover {
+    background-color: #27ae60;
+}
+
+
+#internship-list {
+    margin-top: 20px; 
+}
+
+#internship-items {
+    list-style-type: none; 
+    padding: 0; 
+}
+
+#internship-items li {
+    background-color: #e3f2fd; 
+    border: 1px solid #90caf9; 
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    transition: transform 0.2s; 
+}
+
+#internship-items li:hover {
+    transform: scale(1.02);
+}
+
+#internship-items button {
+    background-color: #e57373;
+    color: white;
+    border: none; 
+    border-radius: 5px; 
+    padding: 5px 10px; 
+    cursor: pointer; 
+    transition: background-color 0.3s; 
+}
+
+#internship-items button:hover {
+    background-color: #d32f2f; 
+}
+/*報告書上傳*/
+/*報告書上傳*/
+/*報告書上傳*/
+#title {
+    text-align: center;
+}
+#uploadForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: #f2f2f2;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+#reportContent {
+    width: 100%;
+    height: 200px;
+    margin-top: 10px;
+}
+#submitButton {
+    padding: 10px 15px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+#submitButton:hover {
+    background-color: #218838;
+}
+#reports {
+    margin-top: 20px;
+}
+#reportList {
+    width: 100%;
+    border-collapse: collapse;
+}
+#reportList th, #reportList td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+#reportList th {
+    background-color: #f2f2f2;
+}
+#uploadForm input[type="text"], input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+/*編輯*/
+/* Modal Styling */
+#modal {
+    position: fixed;
+    top: 0; /* 固定在頂部 */
+    left: 50%;
+    transform: translateX(-50%); /* 水平居中 */
+    padding: 30px; /* 增加內邊距 */
+    font-family: 'Helvetica Neue', Arial, sans-serif; /* 設定字體 */
+    background: linear-gradient(145deg, rgba(173, 216, 230, 0.9), rgba(135, 206, 250, 0.9)); /* 漸層藍色 */
+    border-radius: 12px; /* 更圓的邊角 */
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2), 
+                0 -4px 20px rgba(255, 255, 255, 0.8);
+    width: 350px; /* 調整模態框的寬度 */
+    text-align: center;
+    z-index: 1000; /* 確保模態框在最上層 */
+}
+
+#modal h2 {
+    margin: 0 0 20px;
+    font-size: 24px; /* 調整標題字體大小 */
+    color: #333; /* 標題顏色 */
+    font-weight: bold; /* 加粗 */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* 標題陰影 */
+}
+
+#modal button {
+    margin: 10px 0; /* 增加按鈕間距 */
+    padding: 10px 15px; /* 增加按鈕內邊距 */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s; /* 添加變換效果 */
+    background-color: rgba(255, 255, 255, 0.7); /* 透明白色 */
+    color: #333; /* 按鈕文字顏色 */
+    width: 120px; /* 明確設置按鈕的寬度 */
+    font-size: 16px; /* 增加按鈕字體大小 */
+    font-weight: bold; /* 加粗按鈕文字 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* 按鈕陰影 */
+    border: 1px solid rgba(0, 0, 0, 0.1); /* 初始邊框 */
+}
+
+#modal button:hover {
+    background-color: rgba(255, 255, 255, 0.9); /* 懸停時增強透明度 */
+    transform: scale(1.05); /* 懸停時增大效果 */
+    border: 1px solid rgba(76, 175, 80, 0.5); /* 懸停時邊框顏色 */
+}
+
+#modal button:active {
+    transform: scale(0.95); /* 按下時縮小效果 */
+}
+/*選擇訂閱內容*/
+/*選擇訂閱內容*/
+/*選擇訂閱內容*/
+.modal-content {
+    border-radius: 10px;
+}
+
+.modal-header {
+    background-color: #f8f9fa;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+/*footer*/
+/*footer*/
+/*footer*/
+#footer {
+    background-color: #A8E0DF; 
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box; 
+    padding: 20px; 
+    text-align: center;
+    position: relative; 
+}
+
+#footer p {
+    margin: 10px 0; 
+    color: #2e7d32; 
+    font-size: 16px; 
+}
+
+#footer a {
+    color: #2e7d32;
+    text-decoration: none; 
+}
+
+#footer a:hover {
+    text-decoration: underline; 
+}
+/*隱私政策*/
+.privacy-policy {
+    padding: 20px;
+    background-color: #f9f9f9; /* 淺色背景 */
+    border-radius: 8px; /* 圓角邊框 */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* 盒子陰影 */
+}
+
+.privacy-policy h2 {
+    font-size: 32px;
+    color: #2e7d32;
+    margin-bottom: 15px;
+}
+
+.privacy-policy h3 {
+    font-size: 24px;
+    color: #333; 
+    margin-top: 20px;
+}
+
+.privacy-policy p, .privacy-policy ul {
+    font-size: 16px;
+    color: #555; 
+    line-height: 1.6; 
+}
+
+.privacy-policy ul {
+    margin-left: 20px;
+}
+
+.privacy-policy a {
+    color: #2e7d32; 
+    text-decoration: none;
+}
+
+.privacy-policy a:hover {
+    text-decoration: underline;
+}

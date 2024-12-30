@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>產業實習平台</title>
+    <!--CDN-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        #internship-items {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        #internship-items li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            background-color: #f8f9fa;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 5px;
+        }
+
+        button {
+            font-size: 0.8rem;
+            padding: 0.1rem 0.3rem;
+            border-radius: 4px;
+        }
+        #custom-modal {
+        background: linear-gradient(145deg, rgba(173, 216, 230, 0.9), rgba(135, 206, 250, 0.9)); /* 漸層藍色 */
+        border-radius: 12px; /* 更圓的邊角 */
+        box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2), 
+                    0 -4px 20px rgba(255, 255, 255, 0.8);
+    }
+
+        #custom-modal h5 {
+            font-family: 'Helvetica Neue', Arial, sans-serif; /* 設定字體 */
+            color: #333; /* 標題顏色 */
+            font-weight: bold; /* 加粗 */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* 標題陰影 */
+        }
+
+        #custom-modal .modal-footer button {
+            padding: 10px 15px; /* 增加按鈕內邊距 */
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s; /* 添加變換效果 */
+            background-color: rgba(255, 255, 255, 0.7); /* 透明白色 */
+            color: #333; /* 按鈕文字顏色 */
+            width: 120px; /* 明確設置按鈕的寬度 */
+            font-size: 16px; /* 增加按鈕字體大小 */
+            font-weight: bold; /* 加粗按鈕文字 */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* 按鈕陰影 */
+            border: 1px solid rgba(0, 0, 0, 0.1); /* 初始邊框 */
+        }
+
+        #custom-modal .modal-footer button:hover {
+            background-color: rgba(255, 255, 255, 0.9); /* 懸停時增強透明度 */
+            transform: scale(1.05); /* 懸停時增大效果 */
+            border: 1px solid rgba(76, 175, 80, 0.5); /* 懸停時邊框顏色 */
+        }
+
+        #custom-modal .modal-footer button:active {
+            transform: scale(0.95); /* 按下時縮小效果 */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="header-top">
+            <h1>產業實習平台</h1>
+            <div id="login-container">
+                <nav id="login-nav"> 
+                    <ul>
+                        <li><a href="login.html">
+                            <i class="fas fa-user icon"></i>登入
+                        </a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    
+        <nav id="main-nav">
+            <ul>
+                <li><a href="首頁.html">首頁</a></li>
+                <li><a href="實習資料管理.html">實習資料管理</a></li>
+                <li><a href="報告書上傳.html">報告書上傳</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <div id="wrapper">
+            <div id="item1"></div>
+            <div id="item2">
+                <div id="internship-container">
+                    <h3 align="center">實習資訊管理</h3>
+                    <form id="internship-form">
+                        <label for="internship-company">實習企業名稱：</label>
+                        <input type="text" id="internship-company" required>
+        
+                        <label for="internship-start">起始時間：</label>
+                        <input type="date" id="internship-start" required>
+        
+                        <label for="internship-end">結束時間：</label>
+                        <input type="date" id="internship-end" required>
+        
+                        <input type="submit" id="submit-internship" value="新增實習資訊">
+                    </form>
+                    <div id="internship-list">
+                        <h3 align="center">已新增實習資訊</h3>
+                        <ul id="internship-items">
+                            <!-- 實習資訊列表會在這裡顯示 -->
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Modal -->
+                <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content" id="custom-modal">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="editModalLabel">修改實習資訊</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <label for="edit-internship-company">實習企業名稱：</label>
+                                <input type="text" id="edit-internship-company" required>
+                    
+                                <label for="edit-internship-start">起始時間：</label>
+                                <input type="date" id="edit-internship-start" required>
+                    
+                                <label for="edit-internship-end">結束時間：</label>
+                                <input type="date" id="edit-internship-end" required>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                                <button type="button" class="btn btn-primary" id="save-changes">保存變更</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                    let currentItem; // 用於保存當前正在編輯的列表項目
+
+                    // 從 localStorage 加載實習資料
+                    window.onload = function() {
+                        const internships = JSON.parse(localStorage.getItem('internships')) || [];
+                        internships.forEach(({ company, start, end }) => {
+                            addInternshipItem(company, start, end);
+                        });
+                    };
+
+                    document.getElementById('internship-form').addEventListener('submit', function(event) {
+                        event.preventDefault();
+                        
+                        const company = document.getElementById('internship-company').value;
+                        const start = document.getElementById('internship-start').value;
+                        const end = document.getElementById('internship-end').value;
+                        
+                        addInternshipItem(company, start, end);
+                        
+                        // 清空表單
+                        this.reset();
+                    });
+
+                    function addInternshipItem(company, start, end) {
+                        const listItem = document.createElement('li');
+                        listItem.textContent = `${company} (起始: ${start}, 結束: ${end}) `;
+                        
+                        const actionButtons = document.createElement('div');
+                        actionButtons.classList.add('action-buttons');
+
+                        const editButton = document.createElement('button');
+                        editButton.textContent = '修改';
+                        editButton.classList.add('btn', 'btn-warning', 'btn-sm');
+                        editButton.addEventListener('click', function() {
+                            currentItem = listItem; // 保存當前列表項目
+                            document.getElementById('edit-internship-company').value = company;
+                            document.getElementById('edit-internship-start').value = start;
+                            document.getElementById('edit-internship-end').value = end;
+                            var editModal = new bootstrap.Modal(document.getElementById('editModal'));
+                            editModal.show(); // 顯示模態框
+                        });
+
+                        const deleteButton = document.createElement('button');
+                        deleteButton.textContent = '刪除';
+                        deleteButton.classList.add('btn', 'btn-danger', 'btn-sm');
+                        deleteButton.addEventListener('click', function() {
+                            listItem.remove();
+                            saveInternships(); // 更新 localStorage
+                        });
+                        
+                        actionButtons.appendChild(editButton);
+                        actionButtons.appendChild(deleteButton);
+                        listItem.appendChild(actionButtons);
+                        document.getElementById('internship-items').appendChild(listItem);
+
+                        saveInternships(); // 儲存至 localStorage
+                    }
+
+                    document.getElementById('save-changes').addEventListener('click', function() {
+                        if (currentItem) {
+                            const updatedCompany = document.getElementById('edit-internship-company').value;
+                            const updatedStart = document.getElementById('edit-internship-start').value;
+                            const updatedEnd = document.getElementById('edit-internship-end').value;
+
+                            // 更新列表項目
+                            currentItem.firstChild.textContent = `${updatedCompany} (起始: ${updatedStart}, 結束: ${updatedEnd}) `;
+                            
+                            // 隱藏模態框
+                            var editModal = bootstrap.Modal.getInstance(document.getElementById('editModal'));
+                            editModal.hide(); 
+
+                            saveInternships(); // 更新 localStorage
+                        }
+                    });
+
+                    function saveInternships() {
+                        const items = [];
+                        const listItems = document.querySelectorAll('#internship-items li');
+                        listItems.forEach(item => {
+                            const text = item.firstChild.textContent;
+                            const regex = /(.+) \(起始: (.+), 結束: (.+)\)/;
+                            const match = text.match(regex);
+                            if (match) {
+                                items.push({
+                                    company: match[1],
+                                    start: match[2],
+                                    end: match[3]
+                                });
+                            }
+                        });
+                        localStorage.setItem('internships', JSON.stringify(items));
+                    }
+                </script>
+            </div>
+            <div id="item3"></div>
+        </div>
+    </main>
+
+    <footer id="footer">
+        <p>© 奇怪的 產業實習平台. 版權所有.</p>
+        <p><a href="隱私政策.html">隱私政策</a>
+    </footer>
+</body>
+</html>
